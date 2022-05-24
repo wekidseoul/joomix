@@ -8,7 +8,7 @@ const StyledAvatarOptions = styled.div`
 const StyledTitle = styled.h3`
   text-align: center;
   margin-bottom: 8px;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
 `;
 
 const StyledOptionList = styled.ul`
@@ -34,10 +34,10 @@ const StyledOptionItem = styled.li<{ active: boolean }>`
 `;
 
 const PartInKorean = {
-  background: '배경',
-  clothes: '의상',
-  face: '얼굴',
-  hair: '머리',
+  background: '배경 background',
+  clothes: '의상 clothes',
+  face: '얼굴 face',
+  hair: '머리 hair',
 };
 
 const AvatarOptions: React.FC<{
@@ -57,7 +57,7 @@ const AvatarOptions: React.FC<{
             active={selectedOptions[part] === option.key}
           >
             <img
-              src={`../images/avatar-parts/${part}/${option.key}.png`}
+              src={`images/avatar-parts/${part}/${option.key}.png`}
               alt={`${part}-${option.key}`}
             />
           </StyledOptionItem>

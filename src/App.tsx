@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import GenerateAvatar from './pages/GenerateAvatar';
 import Comments from './pages/Comments';
@@ -8,7 +8,7 @@ import Layout from './components/layout/Layout';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ContextProvider>
         <Layout>
           <Routes>
@@ -18,7 +18,7 @@ function App() {
           </Routes>
         </Layout>
       </ContextProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

@@ -22,19 +22,19 @@ const AvatarPreview: React.FC<{ selectedOptions: SelectedOptions }> = ({
   return (
     <StyledAvatarPreview>
       <img
-        src={`../images/avatar-parts/background/${selectedOptions.background}.png`}
+        src={`images/avatar-parts/background/${selectedOptions.background}.png`}
         alt={`background-${selectedOptions.background}`}
       />
       <img
-        src={`../images/avatar-parts/clothes/${selectedOptions.clothes}.png`}
+        src={`images/avatar-parts/clothes/${selectedOptions.clothes}.png`}
         alt={`clothes-${selectedOptions.clothes}`}
       />
       <img
-        src={`../images/avatar-parts/face/${selectedOptions.face}.png`}
+        src={`images/avatar-parts/face/${selectedOptions.face}.png`}
         alt={`face-${selectedOptions.face}`}
       />
       <img
-        src={`../images/avatar-parts/hair/${selectedOptions.hair}.png`}
+        src={`images/avatar-parts/hair/${selectedOptions.hair}.png`}
         alt={`hair-${selectedOptions.hair}`}
       />
     </StyledAvatarPreview>
