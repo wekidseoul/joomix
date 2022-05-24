@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/findmylord/static/js/main.c71b6145.js",
+    "main.js": "/findmylord/static/js/main.b4a3fd9f.js",
     "index.html": "/findmylord/index.html",
-    "main.c71b6145.js.map": "/findmylord/static/js/main.c71b6145.js.map"
+    "main.b4a3fd9f.js.map": "/findmylord/static/js/main.b4a3fd9f.js.map"
   },
   "entrypoints": [
-    "static/js/main.c71b6145.js"
+    "static/js/main.b4a3fd9f.js"
   ]
 }
