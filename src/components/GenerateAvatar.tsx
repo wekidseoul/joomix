@@ -1,11 +1,12 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import BackgroundOptions from '../assets/json/avatar-parts/background.json';
 import ClothesOptions from '../assets/json/avatar-parts/clothes.json';
 import FaceOptions from '../assets/json/avatar-parts/face.json';
 import HairOptions from '../assets/json/avatar-parts/hair.json';
-import { AvatarPart } from '../types';
+import { AvatarPart, SelectedOptions } from '../types';
 import { ctx } from '../context';
 
 import AvatarOptions from './AvatarOptions';
@@ -25,7 +26,11 @@ const StyledButtons = styled.div`
 `;
 
 const GenerateAvatar = () => {
-  const { selectedOptions, setSelectedOptions } = useContext(ctx);
+  const { options, setOptions } = useContext(ctx);
+  const navigate = useNavigate();
+
+  const [selectedOptions, setSelectedOptions] =
+    useState<SelectedOptions>(options);
 
   const handleChangeOption = (part: AvatarPart, selectedKey: string) => {
     setSelectedOptions((prev) => ({ ...prev, [part]: selectedKey }));
@@ -43,13 +48,24 @@ const GenerateAvatar = () => {
     });
   };
 
+  const handleSubmit = () => {
+    if (
+      Object.values(selectedOptions).findIndex(
+        (option) => option === 'default'
+      ) !== -1
+    )
+      return;
+    setOptions(selectedOptions);
+    navigate('/comments');
+  };
+
   return (
     <div>
       <AvatarPreview selectedOptions={selectedOptions} />
 
       <StyledButtons>
         <button onClick={shuffleAvatar}>Shuffle</button>
-        <button>Done</button>
+        <button onClick={handleSubmit}>Done</button>
       </StyledButtons>
 
       <div>

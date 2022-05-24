@@ -3,19 +3,19 @@ import { createContext, ReactNode, useState } from 'react';
 import { ContextType, SelectedOptions } from './types';
 
 const initialValue = {
-  selectedOptions: {
+  options: {
     background: '',
     clothes: '',
     face: '',
     hair: '',
   },
-  setSelectedOptions: () => {},
+  setOptions: () => {},
 };
 
 export const ctx = createContext<ContextType>(initialValue);
 
 const ContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [selectedOptions, setSelectedOptions] = useState<SelectedOptions>({
+  const [options, setOptions] = useState<SelectedOptions>({
     background: 'default',
     clothes: 'default',
     face: 'default',
@@ -25,8 +25,8 @@ const ContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <ctx.Provider
       value={{
-        selectedOptions,
-        setSelectedOptions,
+        options,
+        setOptions,
       }}
     >
       {children}

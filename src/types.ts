@@ -15,6 +15,6 @@ export interface SelectedOptions {
 }
 
 export interface ContextType {
-  selectedOptions: SelectedOptions;
-  setSelectedOptions: Dispatch<SetStateAction<SelectedOptions>>;
+  options: SelectedOptions;
+  setOptions: Dispatch<SetStateAction<SelectedOptions>>;
 }
