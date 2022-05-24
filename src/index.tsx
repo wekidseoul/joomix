@@ -10,6 +10,13 @@ const GlobalStyle = createGlobalStyle`
   ${reset}
   body {
     background-color: #aaa;
+    font-family: 'Poppins', 'Noto Sans KR', sans-serif;
+    padding: 12px;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
   }
 `;
 
