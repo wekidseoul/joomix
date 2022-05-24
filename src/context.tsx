@@ -3,19 +3,19 @@ import { createContext, ReactNode, useState } from 'react';
 import { ContextType, Avatar } from './types';
 
 const initialValue = {
-  options: {
+  avatar: {
     background: '',
     clothes: '',
     face: '',
     hair: '',
   },
-  setOptions: () => {},
+  setAvatar: () => {},
 };
 
 export const ctx = createContext<ContextType>(initialValue);
 
 const ContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [options, setOptions] = useState<Avatar>({
+  const [avatar, setAvatar] = useState<Avatar>({
     background: 'default',
     clothes: 'default',
     face: 'default',
@@ -25,8 +25,8 @@ const ContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <ctx.Provider
       value={{
-        options,
-        setOptions,
+        avatar,
+        setAvatar,
       }}
     >
       {children}

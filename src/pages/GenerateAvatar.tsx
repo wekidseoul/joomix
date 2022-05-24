@@ -13,7 +13,7 @@ import AvatarOptions from '../components/AvatarOptions';
 import AvatarPreview from '../components/AvatarPreview';
 
 const StyledGenerateAvatar = styled.main`
-  padding: 24px 8px 40px;
+  padding: 24px 12px 40px;
 `;
 
 const StyledButtons = styled.div`
@@ -26,21 +26,23 @@ const StyledButtons = styled.div`
     border: none;
     border-radius: 4px;
     padding: 8px 12px;
+    box-shadow: 1px 1px 5px 2px #00000020;
+    cursor: pointer;
   }
 `;
 
 const GenerateAvatar = () => {
-  const { options, setOptions } = useContext(ctx);
+  const { avatar, setAvatar } = useContext(ctx);
   const navigate = useNavigate();
 
-  const [selectedOptions, setAvatar] = useState<Avatar>(options);
+  const [selectedOptions, setSelectedOptions] = useState<Avatar>(avatar);
 
   const handleChangeOption = (part: AvatarPart, selectedKey: string) => {
-    setAvatar((prev) => ({ ...prev, [part]: selectedKey }));
+    setSelectedOptions((prev) => ({ ...prev, [part]: selectedKey }));
   };
 
   const shuffleAvatar = () => {
-    setAvatar({
+    setSelectedOptions({
       background:
         BackgroundOptions[Math.floor(Math.random() * BackgroundOptions.length)]
           .key,
@@ -58,7 +60,7 @@ const GenerateAvatar = () => {
       ) !== -1
     )
       return;
-    setOptions(selectedOptions);
+    setAvatar(selectedOptions);
     navigate('/comments');
   };
 

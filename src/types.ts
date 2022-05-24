@@ -15,8 +15,8 @@ export interface Avatar {
 }
 
 export interface ContextType {
-  options: Avatar;
-  setOptions: Dispatch<SetStateAction<Avatar>>;
+  avatar: Avatar;
+  setAvatar: Dispatch<SetStateAction<Avatar>>;
 }
 
 export interface Comment {
