@@ -5,11 +5,11 @@ import Header from './Header';
 
 const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
-    <div>
+    <>
       <Header />
       {children}
       <Footer />
-    </div>
+    </>
   );
 };
 

@@ -14,7 +14,7 @@ function App() {
           <Layout>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="comments" element={<Comments />} />
+              <Route path="/comments" element={<Comments />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>

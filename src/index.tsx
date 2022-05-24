@@ -11,12 +11,17 @@ const GlobalStyle = createGlobalStyle`
   body {
     background-color: pink;
     font-family: 'Poppins', 'Noto Sans KR', sans-serif;
-    padding-top: 48px;
   }
   *,
   *::before,
   *::after {
     box-sizing: border-box;
+  }
+  #root {
+    min-height: 100vh;
+    position: relative;
+    padding-top: 48px;
+    padding-bottom: 120px;
   }
 `;
 

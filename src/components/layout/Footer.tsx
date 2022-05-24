@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledFooter = styled.footer`
-  position: static;
+  position: absolute;
   z-index: 1000;
   bottom: 0;
   left: 0;
