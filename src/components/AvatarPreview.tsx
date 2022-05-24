@@ -3,8 +3,8 @@ import { SelectedOptions } from '../types';
 
 const StyledAvatarPreview = styled.div`
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: 240px;
+  height: 240px;
   border: 3px solid #000;
   margin: 0 auto 20px;
   img {
