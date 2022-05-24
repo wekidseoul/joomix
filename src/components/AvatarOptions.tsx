@@ -31,14 +31,6 @@ const StyledOptionItem = styled.li<{ active: boolean }>`
     height: 48px;
     border: ${(props) => (props.active ? '1px solid #fff' : 'none')};
   }
-  p {
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  &:hover p {
-    opacity: 1;
-  }
 `;
 
 const PartInKorean = {
@@ -68,7 +60,6 @@ const AvatarOptions: React.FC<{
               src={`../images/avatar-parts/${part}/${option.key}.png`}
               alt={`${part}-${option.key}`}
             />
-            <p>{option.name}</p>
           </StyledOptionItem>
         ))}
       </StyledOptionList>

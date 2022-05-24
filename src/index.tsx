@@ -9,9 +9,9 @@ import reset from 'styled-reset';
 const GlobalStyle = createGlobalStyle`
   ${reset}
   body {
-    background-color: #aaa;
+    background-color: pink;
     font-family: 'Poppins', 'Noto Sans KR', sans-serif;
-    padding: 12px;
+    padding-top: 48px;
   }
   *,
   *::before,
