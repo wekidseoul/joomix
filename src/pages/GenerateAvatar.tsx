@@ -9,8 +9,12 @@ import HairOptions from '../assets/json/avatar-parts/hair.json';
 import { AvatarPart, SelectedOptions } from '../types';
 import { ctx } from '../context';
 
-import AvatarOptions from './AvatarOptions';
-import AvatarPreview from './AvatarPreview';
+import AvatarOptions from '../components/AvatarOptions';
+import AvatarPreview from '../components/AvatarPreview';
+
+const StyledGenerateAvatar = styled.main`
+  padding: 24px 0 40px;
+`;
 
 const StyledButtons = styled.div`
   display: flex;
@@ -60,7 +64,7 @@ const GenerateAvatar = () => {
   };
 
   return (
-    <div>
+    <StyledGenerateAvatar>
       <AvatarPreview selectedOptions={selectedOptions} />
 
       <StyledButtons>
@@ -94,7 +98,7 @@ const GenerateAvatar = () => {
           onChange={handleChangeOption}
         />
       </div>
-    </div>
+    </StyledGenerateAvatar>
   );
 };
 
