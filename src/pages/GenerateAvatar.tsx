@@ -6,14 +6,14 @@ import BackgroundOptions from '../assets/json/avatar-parts/background.json';
 import ClothesOptions from '../assets/json/avatar-parts/clothes.json';
 import FaceOptions from '../assets/json/avatar-parts/face.json';
 import HairOptions from '../assets/json/avatar-parts/hair.json';
-import { AvatarPart, SelectedOptions } from '../types';
+import { AvatarPart, Avatar } from '../types';
 import { ctx } from '../context';
 
 import AvatarOptions from '../components/AvatarOptions';
 import AvatarPreview from '../components/AvatarPreview';
 
 const StyledGenerateAvatar = styled.main`
-  padding: 24px 0 40px;
+  padding: 24px 8px 40px;
 `;
 
 const StyledButtons = styled.div`
@@ -33,15 +33,14 @@ const GenerateAvatar = () => {
   const { options, setOptions } = useContext(ctx);
   const navigate = useNavigate();
 
-  const [selectedOptions, setSelectedOptions] =
-    useState<SelectedOptions>(options);
+  const [selectedOptions, setAvatar] = useState<Avatar>(options);
 
   const handleChangeOption = (part: AvatarPart, selectedKey: string) => {
-    setSelectedOptions((prev) => ({ ...prev, [part]: selectedKey }));
+    setAvatar((prev) => ({ ...prev, [part]: selectedKey }));
   };
 
   const shuffleAvatar = () => {
-    setSelectedOptions({
+    setAvatar({
       background:
         BackgroundOptions[Math.floor(Math.random() * BackgroundOptions.length)]
           .key,

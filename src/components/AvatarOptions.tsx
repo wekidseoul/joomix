@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { AvatarPart, Option, SelectedOptions } from '../types';
+import { AvatarPart, Option, Avatar } from '../types';
 
 const StyledAvatarOptions = styled.div`
   margin-bottom: 12px;
@@ -43,7 +43,7 @@ const PartInKorean = {
 const AvatarOptions: React.FC<{
   part: AvatarPart;
   options: Option[];
-  selectedOptions: SelectedOptions;
+  selectedOptions: Avatar;
   onChange: (part: AvatarPart, selectedKey: string) => void;
 }> = ({ part, options, selectedOptions, onChange }) => {
   return (

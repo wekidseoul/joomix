@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SelectedOptions } from '../types';
+import { Avatar } from '../types';
 
 const StyledAvatarPreview = styled.div`
   position: relative;
@@ -16,7 +16,7 @@ const StyledAvatarPreview = styled.div`
   }
 `;
 
-const AvatarPreview: React.FC<{ selectedOptions: SelectedOptions }> = ({
+const AvatarPreview: React.FC<{ selectedOptions: Avatar }> = ({
   selectedOptions,
 }) => {
   return (

@@ -7,7 +7,7 @@ export interface Option {
   name: string;
 }
 
-export interface SelectedOptions {
+export interface Avatar {
   background: string;
   clothes: string;
   face: string;
@@ -15,6 +15,15 @@ export interface SelectedOptions {
 }
 
 export interface ContextType {
-  options: SelectedOptions;
-  setOptions: Dispatch<SetStateAction<SelectedOptions>>;
+  options: Avatar;
+  setOptions: Dispatch<SetStateAction<Avatar>>;
+}
+
+export interface Comment {
+  name: string;
+  id: string;
+  nickname: string;
+  avatar: Avatar;
+  message: string;
+  password: string;
 }

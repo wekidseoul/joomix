@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useState } from 'react';
 
-import { ContextType, SelectedOptions } from './types';
+import { ContextType, Avatar } from './types';
 
 const initialValue = {
   options: {
@@ -15,7 +15,7 @@ const initialValue = {
 export const ctx = createContext<ContextType>(initialValue);
 
 const ContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [options, setOptions] = useState<SelectedOptions>({
+  const [options, setOptions] = useState<Avatar>({
     background: 'default',
     clothes: 'default',
     face: 'default',
