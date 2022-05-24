@@ -60,8 +60,8 @@ const GenerateAvatar = () => {
           onChange={handleChangeOption}
         />
         <AvatarOptions
-          part="clothes"
-          options={ClothesOptions}
+          part="hair"
+          options={HairOptions}
           selectedOptions={selectedOptions}
           onChange={handleChangeOption}
         />
@@ -72,8 +72,8 @@ const GenerateAvatar = () => {
           onChange={handleChangeOption}
         />
         <AvatarOptions
-          part="hair"
-          options={HairOptions}
+          part="clothes"
+          options={ClothesOptions}
           selectedOptions={selectedOptions}
           onChange={handleChangeOption}
         />
