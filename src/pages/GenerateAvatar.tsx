@@ -7,6 +7,7 @@ import ClothesOptions from '../assets/json/avatar-parts/clothes.json';
 import FaceOptions from '../assets/json/avatar-parts/face.json';
 import HairOptions from '../assets/json/avatar-parts/hair.json';
 import { AvatarPart, Avatar } from '../types';
+import { getRandomNumber, wait } from '../utils';
 import { ctx } from '../context';
 
 import AvatarOptions from '../components/AvatarOptions';
@@ -41,16 +42,26 @@ const GenerateAvatar = () => {
     setSelectedOptions((prev) => ({ ...prev, [part]: selectedKey }));
   };
 
-  const shuffleAvatar = () => {
-    setSelectedOptions({
-      background:
-        BackgroundOptions[Math.floor(Math.random() * BackgroundOptions.length)]
-          .key,
-      clothes:
-        ClothesOptions[Math.floor(Math.random() * ClothesOptions.length)].key,
-      face: FaceOptions[Math.floor(Math.random() * FaceOptions.length)].key,
-      hair: HairOptions[Math.floor(Math.random() * HairOptions.length)].key,
-    });
+  const shufflePart = async (
+    key: AvatarPart,
+    options: { key: string; name: string }[]
+  ) => {
+    for (let i = 0; i < 20; i++) {
+      setSelectedOptions((prev) => {
+        return {
+          ...prev,
+          [key]: options[getRandomNumber(options.length)].key,
+        };
+      });
+      await wait(100);
+    }
+  };
+
+  const shuffleAvatar = async () => {
+    await shufflePart('background', BackgroundOptions);
+    await shufflePart('hair', HairOptions);
+    await shufflePart('face', FaceOptions);
+    await shufflePart('clothes', ClothesOptions);
   };
 
   const handleSubmit = () => {

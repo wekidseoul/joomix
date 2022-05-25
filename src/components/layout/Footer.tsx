@@ -20,7 +20,7 @@ const StyledFooter = styled.footer`
 const StyledLinks = styled.ul`
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 24px;
   li {
     font-size: 1.2rem;
     i {
@@ -32,7 +32,7 @@ const StyledLinks = styled.ul`
 const Footer = () => {
   return (
     <StyledFooter>
-      <p>주현영 배우니ㅁ을 너-무 싸란해서 만든 웨ㅂ 싸이또 이무니다.</p>
+      <p>주현영 배우님을 너-무 싸란해서 만든 웹싸이또 이무니다.</p>
       <StyledLinks>
         <li>
           <a href="https://www.instagram.com/2ruka__">

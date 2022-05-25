@@ -71,7 +71,7 @@ const Comments = () => {
 
       <StyledButtons>
         <Button text="나의 ㈜님 보기" onClick={() => setIsPreviewOpen(true)} />
-        <Button text="간증문 작성" onClick={() => setIsNewCommentOpen(true)} />
+        <Button text="간증하기" onClick={() => setIsNewCommentOpen(true)} />
       </StyledButtons>
 
       <CommentList comments={COMMENTS} />
