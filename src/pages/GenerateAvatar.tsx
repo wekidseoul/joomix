@@ -33,6 +33,7 @@ const StyledButtons = styled.div`
 `;
 
 const GenerateAvatar = () => {
+  const [loading, setLoading] = useState(false);
   const { avatar, setAvatar } = useContext(ctx);
   const navigate = useNavigate();
 
@@ -46,22 +47,25 @@ const GenerateAvatar = () => {
     key: AvatarPart,
     options: { key: string; name: string }[]
   ) => {
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 12; i++) {
       setSelectedOptions((prev) => {
         return {
           ...prev,
           [key]: options[getRandomNumber(options.length)].key,
         };
       });
-      await wait(100);
+      await wait(50);
     }
   };
 
   const shuffleAvatar = async () => {
+    if (loading) return;
+    setLoading(true);
     await shufflePart('background', BackgroundOptions);
     await shufflePart('hair', HairOptions);
     await shufflePart('face', FaceOptions);
     await shufflePart('clothes', ClothesOptions);
+    setLoading(false);
   };
 
   const handleSubmit = () => {
