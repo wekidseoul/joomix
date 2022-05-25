@@ -8,22 +8,22 @@ import Modal from '../components/UI/Modal';
 
 const COMMENTS = [
   {
-    name: '이름',
+    name: '바오로',
     id: '1',
-    nickname: '일촌명',
+    nickname: '㈜님만바라봅니다',
     avatar: {
       background: '1',
       clothes: '4',
       face: '3',
       hair: '2',
     },
-    message: '이것은 일촌평입니다 !!',
+    message: '㈜님 저를 악에서 구하시옵고...',
     password: 'password',
   },
   {
-    name: '머저리',
+    name: '윤칠범',
     id: '2',
-    nickname: '모모랜드',
+    nickname: '요한',
     avatar: {
       background: '2',
       clothes: '5',
@@ -31,7 +31,7 @@ const COMMENTS = [
       hair: '1',
     },
     message:
-      '머저리가 남기는 일촌평입니다 ㅋㅋㅋ !!머저리가 남기는 일촌평입니다 ㅋㅋㅋ !!머저리가 남기는 일촌평입니다 ㅋㅋㅋ !!머저리가 남기는 일촌평입니다 ㅋㅋㅋ !!머저리가 남기는 일촌평입니다 ㅋㅋㅋ',
+      '제 코메디언 인생에 빛이 되어주신 ㈜님. 한평생 그리고 사후세계에서도 당신만을 따르겠습니다. 하늘 아래 경건히 맹세하오니 미천한 저를 돌봐주시옵소서.',
     password: '1234',
   },
 ];
@@ -67,7 +67,7 @@ const Comments = () => {
     <StyledComments>
       <StyledButtons>
         <button onClick={() => navigate('/')}>개종하기</button>
-        <button onClick={() => setIsModalOpen(true)}>일촌평 쓰기</button>
+        <button onClick={() => setIsModalOpen(true)}>간증문 작성</button>
       </StyledButtons>
 
       <CommentList comments={COMMENTS} />
