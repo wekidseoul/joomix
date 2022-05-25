@@ -120,7 +120,7 @@ const NewComment: React.FC<{ closeModal: () => void }> = ({ closeModal }) => {
           name="password"
           value={form.password}
           onChange={handleChange}
-        />{' '}
+        />
       </div>
 
       <Button type="submit" text="완료" onClick={handleSubmit} />

@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 import { Comment } from '../types';
 
+import AvatarPreview from './AvatarPreview';
+import Modal from './UI/Modal';
+
 const StyledCommentItem = styled.li`
   position: relative;
   display: flex;
@@ -62,27 +65,13 @@ const StyledMessage = styled.p`
   font-size: 0.9rem;
 `;
 
-const StyledDeleteButton = styled.button`
-  background-color: transparent;
-  border: none;
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-`;
-
 const CommentItem: React.FC<{ comment: Comment }> = ({ comment }) => {
   const [expanded, setExpanded] = useState(false);
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
   const handleClickAvatar = (e: MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
-    // [To do] 아바타 확대
-  };
-
-  const handleClickDelete = (e: MouseEvent<HTMLButtonElement>) => {
-    e.stopPropagation();
-    // [To do] 일촌평 삭제
+    setIsPreviewOpen(true);
   };
 
   return (
@@ -114,9 +103,11 @@ const CommentItem: React.FC<{ comment: Comment }> = ({ comment }) => {
         <StyledMessage>{comment.message}</StyledMessage>
       </StyledTextContents>
 
-      <StyledDeleteButton onClick={handleClickDelete}>
-        <i className="fa-solid fa-xmark"></i>
-      </StyledDeleteButton>
+      {isPreviewOpen && (
+        <Modal closeModal={() => setIsPreviewOpen(false)}>
+          <AvatarPreview selectedOptions={comment.avatar} />
+        </Modal>
+      )}
     </StyledCommentItem>
   );
 };
