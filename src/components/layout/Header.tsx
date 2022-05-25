@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledHeader = styled.header`
@@ -14,8 +15,17 @@ const StyledHeader = styled.header`
   box-shadow: 0px 1px 1px 1px #00000005;
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+`;
+
 const Header = () => {
-  return <StyledHeader>㈜님을찾orㅅㅓ™</StyledHeader>;
+  return (
+    <StyledHeader>
+      <StyledLink to="/">㈜님을찾orㅅㅓ™</StyledLink>
+    </StyledHeader>
+  );
 };
 
 export default Header;
