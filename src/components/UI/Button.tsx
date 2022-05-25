@@ -11,11 +11,16 @@ const StyledButton = styled.button`
   cursor: pointer;
 `;
 
-const Button: React.FC<{ text: string; onClick: () => void }> = ({
-  text,
-  onClick,
-}) => {
-  return <StyledButton onClick={onClick}>{text}</StyledButton>;
+const Button: React.FC<{
+  text: string;
+  onClick: any;
+  type?: 'button' | 'submit' | 'reset';
+}> = ({ text, onClick, type }) => {
+  return (
+    <StyledButton onClick={onClick} type={type}>
+      {text}
+    </StyledButton>
+  );
 };
 
 export default Button;

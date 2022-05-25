@@ -21,7 +21,7 @@ export interface ContextType {
 
 export interface Comment {
   name: string;
-  id: string;
+  id?: string;
   nickname: string;
   avatar: Avatar;
   message: string;

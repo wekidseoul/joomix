@@ -43,13 +43,15 @@ const Comments = () => {
   const getCommentList = async () => {
     const commentsArray: Comment[] = [];
     const querySnapshot = await getDocs(collection(db, 'comments'));
-    querySnapshot.forEach((doc) => commentsArray.push(doc.data() as Comment));
+    querySnapshot.forEach((doc) =>
+      commentsArray.push({ ...(doc.data() as Comment), id: doc.id })
+    );
     setComments(commentsArray);
   };
 
   useEffect(() => {
     getCommentList();
-  }, []);
+  }, [isNewCommentOpen]);
 
   return (
     <StyledComments>
@@ -63,7 +65,7 @@ const Comments = () => {
       <CommentList comments={comments} />
       {isNewCommentOpen && (
         <Modal closeModal={() => setIsNewCommentOpen(false)}>
-          <NewComment />
+          <NewComment closeModal={() => setIsNewCommentOpen(false)} />
         </Modal>
       )}
       {isPreviewOpen && (
