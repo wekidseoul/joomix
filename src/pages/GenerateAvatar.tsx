@@ -16,6 +16,13 @@ const StyledGenerateAvatar = styled.main`
   padding: 24px 12px 40px;
 `;
 
+const StyledTitle = styled.h2`
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 24px;
+`;
+
 const StyledButtons = styled.div`
   display: flex;
   justify-content: center;
@@ -23,6 +30,7 @@ const StyledButtons = styled.div`
   margin-bottom: 36px;
   button {
     background: #fff;
+    color: #000000;
     border: none;
     border-radius: 4px;
     padding: 8px 12px;
@@ -66,11 +74,13 @@ const GenerateAvatar = () => {
 
   return (
     <StyledGenerateAvatar>
+      <StyledTitle>당신의 ㈜님은 어떤 모습을 하고 계십니까?</StyledTitle>
+
       <AvatarPreview selectedOptions={selectedOptions} />
 
       <StyledButtons>
-        <button onClick={shuffleAvatar}>Shuffle</button>
-        <button onClick={handleSubmit}>Done</button>
+        <button onClick={shuffleAvatar}>랜덤</button>
+        <button onClick={handleSubmit}>완료</button>
       </StyledButtons>
 
       <div>

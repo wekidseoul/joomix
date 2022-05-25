@@ -40,6 +40,13 @@ const StyledComments = styled.div`
   padding: 24px 12px 40px;
 `;
 
+const StyledTitle = styled.h2`
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 24px;
+`;
+
 const StyledButtons = styled.div`
   display: flex;
   justify-content: center;
@@ -50,6 +57,7 @@ const StyledButtons = styled.div`
   button {
     display: block;
     background: #fff;
+    color: #000000;
     border: none;
     border-radius: 4px;
     padding: 8px 12px;
@@ -65,6 +73,8 @@ const Comments = () => {
 
   return (
     <StyledComments>
+      <StyledTitle>자신만의 ㈜를 찾은 신자들의 간증문입니다.</StyledTitle>
+
       <StyledButtons>
         <button onClick={() => navigate('/')}>개종하기</button>
         <button onClick={() => setIsModalOpen(true)}>간증문 작성</button>
