@@ -37,7 +37,7 @@ const StyledAvatarPreview = styled.div`
 `;
 
 const StyledTextContents = styled.div<{ expanded: boolean }>`
-  height: ${(props) => (props.expanded ? 'auto' : '92px')};
+  height: ${(props) => (props.expanded ? 'auto' : '94px')};
   display: ${(props) => (props.expanded ? 'block' : '-webkit-box')};
   padding: 12px 12px 12px 4px;
   line-height: 1.2;
