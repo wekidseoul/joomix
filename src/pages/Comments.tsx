@@ -1,9 +1,12 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useContext } from 'react';
 import styled from 'styled-components';
+
+import { ctx } from '../context';
 
 import CommentList from '../components/CommentList';
 import NewComment from '../components/NewComment';
+import AvatarPreview from '../components/AvatarPreview';
+import Button from '../components/UI/Button';
 import Modal from '../components/UI/Modal';
 
 const COMMENTS = [
@@ -54,36 +57,32 @@ const StyledButtons = styled.div`
   margin-bottom: 36px;
   width: fit-content;
   margin: 12px auto 36px;
-  button {
-    display: block;
-    background: #fff;
-    color: #000000;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 12px;
-    box-shadow: 1px 1px 5px 2px #00000020;
-    cursor: pointer;
-  }
 `;
 
 const Comments = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isNewCommentOpen, setIsNewCommentOpen] = useState(false);
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
-  const navigate = useNavigate();
+  const { avatar } = useContext(ctx);
 
   return (
     <StyledComments>
       <StyledTitle>자신만의 ㈜를 찾은 신자들의 간증문입니다.</StyledTitle>
 
       <StyledButtons>
-        <button onClick={() => navigate('/')}>개종하기</button>
-        <button onClick={() => setIsModalOpen(true)}>간증문 작성</button>
+        <Button text="나의 ㈜님 보기" onClick={() => setIsPreviewOpen(true)} />
+        <Button text="간증문 작성" onClick={() => setIsNewCommentOpen(true)} />
       </StyledButtons>
 
       <CommentList comments={COMMENTS} />
-      {isModalOpen && (
-        <Modal closeModal={() => setIsModalOpen(false)}>
+      {isNewCommentOpen && (
+        <Modal closeModal={() => setIsNewCommentOpen(false)}>
           <NewComment />
+        </Modal>
+      )}
+      {isPreviewOpen && (
+        <Modal closeModal={() => setIsPreviewOpen(false)}>
+          <AvatarPreview selectedOptions={avatar} isModal={true} />
         </Modal>
       )}
     </StyledComments>

@@ -1,5 +1,9 @@
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+
 import { Avatar } from '../types';
+
+import Button from './UI/Button';
 
 const StyledAvatarPreview = styled.div`
   position: relative;
@@ -16,9 +20,20 @@ const StyledAvatarPreview = styled.div`
   }
 `;
 
-const AvatarPreview: React.FC<{ selectedOptions: Avatar }> = ({
-  selectedOptions,
-}) => {
+const StyledButtonContainer = styled.div`
+  position: absolute;
+  bottom: -48px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+`;
+
+const AvatarPreview: React.FC<{
+  selectedOptions: Avatar;
+  isModal?: boolean;
+}> = ({ selectedOptions, isModal }) => {
+  const navigate = useNavigate();
+
   return (
     <StyledAvatarPreview>
       <img
@@ -37,6 +52,12 @@ const AvatarPreview: React.FC<{ selectedOptions: Avatar }> = ({
         src={`images/avatar-parts/hair/${selectedOptions.hair}.png`}
         alt={`hair-${selectedOptions.hair}`}
       />
+
+      {isModal && (
+        <StyledButtonContainer>
+          <Button text="개종하기" onClick={() => navigate('/')} />
+        </StyledButtonContainer>
+      )}
     </StyledAvatarPreview>
   );
 };

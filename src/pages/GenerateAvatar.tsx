@@ -11,6 +11,7 @@ import { ctx } from '../context';
 
 import AvatarOptions from '../components/AvatarOptions';
 import AvatarPreview from '../components/AvatarPreview';
+import Button from '../components/UI/Button';
 
 const StyledGenerateAvatar = styled.main`
   padding: 24px 12px 40px;
@@ -28,15 +29,6 @@ const StyledButtons = styled.div`
   justify-content: center;
   gap: 20px;
   margin-bottom: 36px;
-  button {
-    background: #fff;
-    color: #000000;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 12px;
-    box-shadow: 1px 1px 5px 2px #00000020;
-    cursor: pointer;
-  }
 `;
 
 const GenerateAvatar = () => {
@@ -79,8 +71,8 @@ const GenerateAvatar = () => {
       <AvatarPreview selectedOptions={selectedOptions} />
 
       <StyledButtons>
-        <button onClick={shuffleAvatar}>랜덤</button>
-        <button onClick={handleSubmit}>완료</button>
+        <Button text="랜덤 생성" onClick={shuffleAvatar} />
+        <Button text="생성 완료" onClick={handleSubmit} />
       </StyledButtons>
 
       <div>
