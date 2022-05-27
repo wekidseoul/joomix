@@ -51,7 +51,6 @@ const initialState: Comment = {
     hair: '',
   },
   message: '',
-  password: '',
 };
 
 const NewComment: React.FC<{ closeModal: () => void }> = ({ closeModal }) => {
@@ -75,6 +74,7 @@ const NewComment: React.FC<{ closeModal: () => void }> = ({ closeModal }) => {
     await addDoc(collection(db, 'comments'), {
       ...form,
       avatar: avatar,
+      regDate: new Date().toISOString(),
     });
 
     closeModal();
@@ -108,17 +108,6 @@ const NewComment: React.FC<{ closeModal: () => void }> = ({ closeModal }) => {
           id="message"
           name="message"
           value={form.message}
-          onChange={handleChange}
-        />
-      </div>
-
-      <div>
-        <label htmlFor="password">비밀번호</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={form.password}
           onChange={handleChange}
         />
       </div>

@@ -25,5 +25,5 @@ export interface Comment {
   nickname: string;
   avatar: Avatar;
   message: string;
-  password: string;
+  regDate?: string;
 }

@@ -51,7 +51,7 @@ const StyledNameContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 4px;
-  margin-bottom: 12px;
+  margin-bottom: 2px;
   span:first-child {
     font-weight: bold;
   }
@@ -59,6 +59,12 @@ const StyledNameContainer = styled.div`
     font-size: 0.8rem;
     color: #333;
   }
+`;
+
+const StyledDate = styled.p`
+  font-size: 0.8rem;
+  color: #333;
+  margin-bottom: 4px;
 `;
 
 const StyledMessage = styled.p`
@@ -100,6 +106,9 @@ const CommentItem: React.FC<{ comment: Comment }> = ({ comment }) => {
           <span>{comment.name}</span>
           <span>{comment.nickname}</span>
         </StyledNameContainer>
+        <StyledDate>
+          {new Date(comment.regDate!).toLocaleString('KO-KR')}
+        </StyledDate>
         <StyledMessage>{comment.message}</StyledMessage>
       </StyledTextContents>
 
