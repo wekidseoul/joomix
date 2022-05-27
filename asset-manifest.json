@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/findmylord/static/js/main.85ed68ac.js",
+    "main.js": "/findmylord/static/js/main.20b5f225.js",
     "index.html": "/findmylord/index.html",
     "static/media/spinner.svg": "/findmylord/static/media/spinner.8ee8934015a2557767edfc55e4e7e126.svg",
-    "main.85ed68ac.js.map": "/findmylord/static/js/main.85ed68ac.js.map"
+    "main.20b5f225.js.map": "/findmylord/static/js/main.20b5f225.js.map"
   },
   "entrypoints": [
-    "static/js/main.85ed68ac.js"
+    "static/js/main.20b5f225.js"
   ]
 }
