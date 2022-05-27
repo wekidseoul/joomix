@@ -23,9 +23,10 @@ const StyledOptionList = styled.ul`
   }
 `;
 
-const StyledOptionItem = styled.li<{ active: boolean }>`
+const StyledOptionItem = styled.li<{ active: boolean; disabled: boolean }>`
   width: 48px;
-  cursor: pointer;
+  cursor: ${(props) => (props.disabled ? 'normal' : 'pointer')};
+  pointer-events: ${(props) => (props.disabled ? 'none' : 'unset')};
   img {
     width: 48px;
     height: 48px;
@@ -45,7 +46,8 @@ const AvatarOptions: React.FC<{
   options: Option[];
   selectedOptions: Avatar;
   onChange: (part: AvatarPart, selectedKey: string) => void;
-}> = ({ part, options, selectedOptions, onChange }) => {
+  disabled: boolean;
+}> = ({ part, options, selectedOptions, onChange, disabled }) => {
   return (
     <StyledAvatarOptions>
       <StyledTitle>{PartInKorean[part]}</StyledTitle>
@@ -55,6 +57,7 @@ const AvatarOptions: React.FC<{
             key={`${part}-${option.key}`}
             onClick={() => onChange(part, option.key)}
             active={selectedOptions[part] === option.key}
+            disabled={disabled}
           >
             <img
               src={`images/avatar-parts/${part}/${option.key}.png`}

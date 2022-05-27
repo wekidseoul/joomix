@@ -110,24 +110,28 @@ const GenerateAvatar = () => {
           options={BackgroundOptions}
           selectedOptions={selectedOptions}
           onChange={handleChangeOption}
+          disabled={loading}
         />
         <AvatarOptions
           part="hair"
           options={HairOptions}
           selectedOptions={selectedOptions}
           onChange={handleChangeOption}
+          disabled={loading}
         />
         <AvatarOptions
           part="face"
           options={FaceOptions}
           selectedOptions={selectedOptions}
           onChange={handleChangeOption}
+          disabled={loading}
         />
         <AvatarOptions
           part="clothes"
           options={ClothesOptions}
           selectedOptions={selectedOptions}
           onChange={handleChangeOption}
+          disabled={loading}
         />
       </div>
     </StyledGenerateAvatar>
