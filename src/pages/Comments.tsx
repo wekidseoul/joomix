@@ -1,4 +1,5 @@
 import { useState, useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { collection, getDocs } from 'firebase/firestore';
@@ -41,6 +42,7 @@ const Comments = () => {
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
   const { avatar } = useContext(ctx);
+  const navigate = useNavigate();
 
   const getCommentList = async () => {
     setLoading(true);
@@ -65,6 +67,15 @@ const Comments = () => {
       document.body.style.overflow = 'unset';
     };
   }, [isNewCommentOpen, isPreviewOpen]);
+
+  useEffect(() => {
+    if (
+      Object.values(avatar).findIndex((value) => value === 'default') !== -1 &&
+      !sessionStorage.getItem('avatar')
+    )
+      navigate('/');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [avatar]);
 
   return (
     <StyledComments>
