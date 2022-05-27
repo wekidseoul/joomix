@@ -12,6 +12,7 @@ import NewComment from '../components/NewComment';
 import AvatarPreview from '../components/AvatarPreview';
 import Button from '../components/UI/Button';
 import Modal from '../components/UI/Modal';
+import { ReactComponent as Spinner } from '../assets/image/spinner.svg';
 
 const StyledComments = styled.div`
   padding: 24px 12px 40px;
@@ -35,23 +36,35 @@ const StyledButtons = styled.div`
 
 const Comments = () => {
   const [comments, setComments] = useState<Comment[]>([]);
+  const [loading, setLoading] = useState(false);
   const [isNewCommentOpen, setIsNewCommentOpen] = useState(false);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
   const { avatar } = useContext(ctx);
 
   const getCommentList = async () => {
+    setLoading(true);
     const commentsArray: Comment[] = [];
     const querySnapshot = await getDocs(collection(db, 'comments'));
     querySnapshot.forEach((doc) =>
       commentsArray.push({ ...(doc.data() as Comment), id: doc.id })
     );
     setComments(commentsArray);
+    setLoading(false);
   };
 
   useEffect(() => {
     getCommentList();
   }, [isNewCommentOpen]);
+
+  useEffect(() => {
+    if (isNewCommentOpen || isPreviewOpen)
+      document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = 'unset';
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isNewCommentOpen, isPreviewOpen]);
 
   return (
     <StyledComments>
@@ -62,7 +75,8 @@ const Comments = () => {
         <Button text="간증하기" onClick={() => setIsNewCommentOpen(true)} />
       </StyledButtons>
 
-      <CommentList comments={comments} />
+      {loading ? <Spinner /> : <CommentList comments={comments} />}
+
       {isNewCommentOpen && (
         <Modal closeModal={() => setIsNewCommentOpen(false)}>
           <NewComment closeModal={() => setIsNewCommentOpen(false)} />

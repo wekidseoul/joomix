@@ -87,7 +87,16 @@ const GenerateAvatar = () => {
 
       <StyledButtons>
         <Button text="랜덤 생성" onClick={shuffleAvatar} />
-        <Button text="생성 완료" onClick={handleSubmit} />
+        <Button
+          text="생성 완료"
+          onClick={handleSubmit}
+          disabled={
+            loading ||
+            Object.values(selectedOptions).findIndex(
+              (option) => option === 'default'
+            ) !== -1
+          }
+        />
       </StyledButtons>
 
       <div>

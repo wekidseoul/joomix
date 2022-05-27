@@ -13,7 +13,7 @@ const StyledNewComment = styled.form`
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 24px 40px;
+  padding: 28px 32px 40px;
   background-color: #f0f0f0;
   border-radius: 8px;
   & > div {
