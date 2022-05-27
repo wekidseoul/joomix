@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -76,8 +76,13 @@ const GenerateAvatar = () => {
     )
       return;
     setAvatar(selectedOptions);
+    sessionStorage.setItem('avatar', JSON.stringify(selectedOptions));
     navigate('/comments');
   };
+
+  useEffect(() => {
+    setSelectedOptions(avatar);
+  }, [avatar]);
 
   return (
     <StyledGenerateAvatar>

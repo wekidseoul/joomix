@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState } from 'react';
+import { createContext, ReactNode, useEffect, useState } from 'react';
 
 import { ContextType, Avatar } from './types';
 
@@ -21,6 +21,11 @@ const ContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     face: 'default',
     hair: 'default',
   });
+
+  useEffect(() => {
+    const savedAvatar = sessionStorage.getItem('avatar');
+    if (savedAvatar) setAvatar(JSON.parse(savedAvatar));
+  }, []);
 
   return (
     <ctx.Provider
