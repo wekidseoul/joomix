@@ -25,6 +25,7 @@ const StyledAvatarPreview = styled.div`
   overflow: hidden;
   margin: 12px;
   flex-shrink: 0;
+  background-color: #fff;
   box-shadow: 1px 1px 5px 2px #00000012;
   cursor: pointer;
   img {
