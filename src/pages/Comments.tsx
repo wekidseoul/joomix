@@ -47,10 +47,16 @@ const Comments = () => {
   const getCommentList = async () => {
     setLoading(true);
     const commentsArray: Comment[] = [];
+
     const querySnapshot = await getDocs(collection(db, 'comments'));
     querySnapshot.forEach((doc) =>
       commentsArray.push({ ...(doc.data() as Comment), id: doc.id })
     );
+    commentsArray.sort((a, b) => {
+      if (a.regDate! > b.regDate!) return -1;
+      if (a.regDate! < b.regDate!) return 1;
+      else return 0;
+    });
     setComments(commentsArray);
     setLoading(false);
   };
