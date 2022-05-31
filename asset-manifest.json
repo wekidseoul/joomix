@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/joodraw/static/js/main.8e04302c.js",
+    "main.js": "/joodraw/static/js/main.c16bb46c.js",
     "index.html": "/joodraw/index.html",
     "static/media/spinner.svg": "/joodraw/static/media/spinner.4ea2f0af610a7b84d9f34b1a08ccf722.svg",
-    "main.8e04302c.js.map": "/joodraw/static/js/main.8e04302c.js.map"
+    "main.c16bb46c.js.map": "/joodraw/static/js/main.c16bb46c.js.map"
   },
   "entrypoints": [
-    "static/js/main.8e04302c.js"
+    "static/js/main.c16bb46c.js"
   ]
 }
