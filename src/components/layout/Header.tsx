@@ -23,7 +23,7 @@ const StyledLink = styled(Link)`
 const Header = () => {
   return (
     <StyledHeader>
-      <StyledLink to="/">주드로 - JooDraw</StyledLink>
+      <StyledLink to="/">㈜믹스ㅁr스Eㅓ™</StyledLink>
     </StyledHeader>
   );
 };
