@@ -59,7 +59,7 @@ const GenerateAvatar = () => {
   const shuffleAvatar = async () => {
     if (loading) return;
     setLoading(true);
-    await shufflePart('head', HeadOptions);
+    shufflePart('head', HeadOptions);
     await shufflePart('body', BodyOptions);
     setLoading(false);
   };
