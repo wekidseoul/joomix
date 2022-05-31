@@ -40,7 +40,7 @@ const Footer = () => {
           </a>
         </li>
         <li>
-          <a href="https://github.com/wekidseoul/findmylord">
+          <a href="https://github.com/wekidseoul/joodraw">
             <i className="fa-brands fa-github"></i>
           </a>
         </li>
