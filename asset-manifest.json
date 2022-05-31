@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/findmylord/static/js/main.4e285abe.js",
-    "index.html": "/findmylord/index.html",
-    "static/media/spinner.svg": "/findmylord/static/media/spinner.4ea2f0af610a7b84d9f34b1a08ccf722.svg",
-    "main.4e285abe.js.map": "/findmylord/static/js/main.4e285abe.js.map"
+    "main.js": "/joodraw/static/js/main.507f74ce.js",
+    "index.html": "/joodraw/index.html",
+    "static/media/spinner.svg": "/joodraw/static/media/spinner.4ea2f0af610a7b84d9f34b1a08ccf722.svg",
+    "main.507f74ce.js.map": "/joodraw/static/js/main.507f74ce.js.map"
   },
   "entrypoints": [
-    "static/js/main.4e285abe.js"
+    "static/js/main.507f74ce.js"
   ]
 }
