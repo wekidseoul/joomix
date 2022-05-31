@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 
-export type AvatarPart = 'background' | 'clothes' | 'face' | 'hair';
+export type AvatarPart = 'head' | 'body';
 
 export interface Option {
   key: string;
@@ -8,10 +8,8 @@ export interface Option {
 }
 
 export interface Avatar {
-  background: string;
-  clothes: string;
-  face: string;
-  hair: string;
+  head: string;
+  body: string;
 }
 
 export interface ContextType {

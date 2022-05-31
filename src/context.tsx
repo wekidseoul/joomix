@@ -4,10 +4,8 @@ import { ContextType, Avatar } from './types';
 
 const initialValue = {
   avatar: {
-    background: '',
-    clothes: '',
-    face: '',
-    hair: '',
+    head: '',
+    body: '',
   },
   setAvatar: () => {},
 };
@@ -16,10 +14,8 @@ export const ctx = createContext<ContextType>(initialValue);
 
 const ContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [avatar, setAvatar] = useState<Avatar>({
-    background: 'default',
-    clothes: 'default',
-    face: 'default',
-    hair: 'default',
+    head: 'default',
+    body: 'default',
   });
 
   useEffect(() => {

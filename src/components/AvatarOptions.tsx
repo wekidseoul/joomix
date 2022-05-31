@@ -34,11 +34,9 @@ const StyledOptionItem = styled.li<{ active: boolean; disabled: boolean }>`
   }
 `;
 
-const PartInKorean = {
-  background: '배경 background',
-  clothes: '의상 clothes',
-  face: '얼굴 face',
-  hair: '머리 hair',
+const PartInUppercase = {
+  head: 'Head',
+  body: 'Body',
 };
 
 const AvatarOptions: React.FC<{
@@ -50,7 +48,7 @@ const AvatarOptions: React.FC<{
 }> = ({ part, options, selectedOptions, onChange, disabled }) => {
   return (
     <StyledAvatarOptions>
-      <StyledTitle>{PartInKorean[part]}</StyledTitle>
+      <StyledTitle>{PartInUppercase[part]}</StyledTitle>
       <StyledOptionList>
         {options.map((option) => (
           <StyledOptionItem

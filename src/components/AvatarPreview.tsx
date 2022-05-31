@@ -37,25 +37,17 @@ const AvatarPreview: React.FC<{
   return (
     <StyledAvatarPreview>
       <img
-        src={`images/avatar-parts/background/${selectedOptions.background}.png`}
-        alt={`background-${selectedOptions.background}`}
+        src={`images/avatar-parts/head/${selectedOptions.head}.png`}
+        alt={`head-${selectedOptions.head}`}
       />
       <img
-        src={`images/avatar-parts/clothes/${selectedOptions.clothes}.png`}
-        alt={`clothes-${selectedOptions.clothes}`}
-      />
-      <img
-        src={`images/avatar-parts/face/${selectedOptions.face}.png`}
-        alt={`face-${selectedOptions.face}`}
-      />
-      <img
-        src={`images/avatar-parts/hair/${selectedOptions.hair}.png`}
-        alt={`hair-${selectedOptions.hair}`}
+        src={`images/avatar-parts/body/${selectedOptions.body}.png`}
+        alt={`body-${selectedOptions.body}`}
       />
 
       {isModal && (
         <StyledButtonContainer>
-          <Button text="개종하기" onClick={() => navigate('/')} />
+          <Button text="수정하기" onClick={() => navigate('/')} />
         </StyledButtonContainer>
       )}
     </StyledAvatarPreview>

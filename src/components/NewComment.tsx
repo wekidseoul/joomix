@@ -45,10 +45,8 @@ const initialState: Comment = {
   name: '',
   nickname: '',
   avatar: {
-    background: '',
-    clothes: '',
-    face: '',
-    hair: '',
+    head: '',
+    body: '',
   },
   message: '',
 };
@@ -93,7 +91,7 @@ const NewComment: React.FC<{ closeModal: () => void }> = ({ closeModal }) => {
       </div>
 
       <div>
-        <label htmlFor="nickname">세례명</label>
+        <label htmlFor="nickname">상태메시지</label>
         <input
           id="nickname"
           name="nickname"
@@ -103,7 +101,7 @@ const NewComment: React.FC<{ closeModal: () => void }> = ({ closeModal }) => {
       </div>
 
       <div>
-        <label htmlFor="message">간증문</label>
+        <label htmlFor="message">평가</label>
         <textarea
           id="message"
           name="message"

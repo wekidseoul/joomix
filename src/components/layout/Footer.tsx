@@ -32,7 +32,7 @@ const StyledLinks = styled.ul`
 const Footer = () => {
   return (
     <StyledFooter>
-      <p>주현영 배우님을 너-무 싸란해서 만든 웹싸이또 이무니다.</p>
+      <p>믿기지 않으시겠지만 저는 주현영 배우님 팬이 맞습니다.</p>
       <StyledLinks>
         <li>
           <a href="https://www.instagram.com/2ruka__">

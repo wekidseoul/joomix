@@ -79,11 +79,11 @@ const Comments = () => {
 
   return (
     <StyledComments>
-      <StyledTitle>자신만의 ㈜를 찾은 신자들의 간증문입니다.</StyledTitle>
+      <StyledTitle>만든이의 그림 솜씨를 평가해주세요.</StyledTitle>
 
       <StyledButtons>
-        <Button text="나의 ㈜님 보기" onClick={() => setIsPreviewOpen(true)} />
-        <Button text="간증하기" onClick={() => setIsNewCommentOpen(true)} />
+        <Button text="내 그림" onClick={() => setIsPreviewOpen(true)} />
+        <Button text="평가하기" onClick={() => setIsNewCommentOpen(true)} />
       </StyledButtons>
 
       {loading ? <Spinner /> : <CommentList comments={comments} />}

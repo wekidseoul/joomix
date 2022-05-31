@@ -2,10 +2,8 @@ import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-import BackgroundOptions from '../assets/json/avatar-parts/background.json';
-import ClothesOptions from '../assets/json/avatar-parts/clothes.json';
-import FaceOptions from '../assets/json/avatar-parts/face.json';
-import HairOptions from '../assets/json/avatar-parts/hair.json';
+import HeadOptions from '../assets/json/avatar-parts/head.json';
+import BodyOptions from '../assets/json/avatar-parts/body.json';
 import { AvatarPart, Avatar } from '../types';
 import { getRandomNumber, wait } from '../utils';
 import { ctx } from '../context';
@@ -61,10 +59,8 @@ const GenerateAvatar = () => {
   const shuffleAvatar = async () => {
     if (loading) return;
     setLoading(true);
-    await shufflePart('background', BackgroundOptions);
-    await shufflePart('hair', HairOptions);
-    await shufflePart('face', FaceOptions);
-    await shufflePart('clothes', ClothesOptions);
+    await shufflePart('head', HeadOptions);
+    await shufflePart('body', BodyOptions);
     setLoading(false);
   };
 
@@ -86,7 +82,7 @@ const GenerateAvatar = () => {
 
   return (
     <StyledGenerateAvatar>
-      <StyledTitle>당신의 ㈜님은 어떤 모습을 하고 계십니까?</StyledTitle>
+      <StyledTitle>아휴 그림이 누추하지만 마음껏 섞어 보세요</StyledTitle>
 
       <AvatarPreview selectedOptions={selectedOptions} />
 
@@ -106,29 +102,15 @@ const GenerateAvatar = () => {
 
       <div>
         <AvatarOptions
-          part="background"
-          options={BackgroundOptions}
+          part="head"
+          options={HeadOptions}
           selectedOptions={selectedOptions}
           onChange={handleChangeOption}
           disabled={loading}
         />
         <AvatarOptions
-          part="hair"
-          options={HairOptions}
-          selectedOptions={selectedOptions}
-          onChange={handleChangeOption}
-          disabled={loading}
-        />
-        <AvatarOptions
-          part="face"
-          options={FaceOptions}
-          selectedOptions={selectedOptions}
-          onChange={handleChangeOption}
-          disabled={loading}
-        />
-        <AvatarOptions
-          part="clothes"
-          options={ClothesOptions}
+          part="body"
+          options={BodyOptions}
           selectedOptions={selectedOptions}
           onChange={handleChangeOption}
           disabled={loading}
