@@ -85,12 +85,12 @@ const CommentItem: React.FC<{ comment: Comment }> = ({ comment }) => {
     <StyledCommentItem onClick={() => setExpanded((prev) => !prev)}>
       <StyledAvatarPreview onClick={handleClickAvatar}>
         <img
-          src={`images/avatar-parts/head/${comment.avatar.head}.png`}
-          alt={`head-${comment.avatar.head}`}
-        />
-        <img
           src={`images/avatar-parts/body/${comment.avatar.body}.png`}
           alt={`body-${comment.avatar.body}`}
+        />
+        <img
+          src={`images/avatar-parts/head/${comment.avatar.head}.png`}
+          alt={`head-${comment.avatar.head}`}
         />
       </StyledAvatarPreview>
 

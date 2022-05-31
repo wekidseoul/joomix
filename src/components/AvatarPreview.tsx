@@ -38,12 +38,12 @@ const AvatarPreview: React.FC<{
   return (
     <StyledAvatarPreview>
       <img
-        src={`images/avatar-parts/head/${selectedOptions.head}.png`}
-        alt={`head-${selectedOptions.head}`}
-      />
-      <img
         src={`images/avatar-parts/body/${selectedOptions.body}.png`}
         alt={`body-${selectedOptions.body}`}
+      />
+      <img
+        src={`images/avatar-parts/head/${selectedOptions.head}.png`}
+        alt={`head-${selectedOptions.head}`}
       />
 
       {isModal && (
